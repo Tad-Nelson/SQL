@@ -29,13 +29,13 @@ INSERT INTO artists (name, country, genre)
 INSERT INTO artists (name, country, genre)
     VALUES ("Gloria Estefan", "US", "Pop");
 INSERT INTO artists (name, country, genre)
-    VALUES ("Bob Marley", "Jamaica", "Reggae") 
+    VALUES ("Bob Marley", "Jamaica", "Reggae"); 
 INSERT INTO artists (name, country, genre)
-    VALUES ("Fletcher", "US", "Pop") 
+    VALUES ("Fletcher", "US", "Pop"); 
 INSERT INTO artists (name, country, genre)
-    VALUES ("Mac Miller", "US", "Hip-Hop") 
+    VALUES ("Mac Miller", "US", "Hip-Hop"); 
 INSERT INTO artists (name, country, genre)
-    VALUES ("Miley Cyrus", "US", "Pop") 
+    VALUES ("Miley Cyrus", "US", "Pop");
 INSERT INTO artists (name, country, genre)
     VALUES ("Briston Maroney", "US", "Indie");
     
@@ -65,18 +65,32 @@ INSERT INTO songs (artist, title)
 INSERT INTO songs (artist, title)
     VALUES ("Queen", "Bohemian Rhapsody");
 INSERT INTO songs (artist, title)
-    VALUES ("Guns N' Roses", "Don't cry")
+    VALUES ("Guns N' Roses", "Don't cry");
 INSERT INTO songs (artist, title)
-    VALUES ("Briston Maroney", "Freakin Out On The Interstate")
+    VALUES ("Briston Maroney", "Freakin Out On The Interstate");
 INSERT INTO songs (artist, title)
-    VALUES ("Miley Cyrus", "Plastic Hearts") 
+    VALUES ("Miley Cyrus", "Plastic Hearts");
 INSERT INTO songs (artist, title)
-    VALUES ("Mac Miller", "Good News")
+    VALUES ("Mac Miller", "Good News");
 INSERT INTO songs (artist, title)
     VALUES ("Fletcher", "Bitter"); 
 
-CREATE TABLE duets ( 
-id INTEGER PRIMARY KEY AUTOINCREMENT
-duet1 _id
-duet2_id);
+CREATE TABLE duets (
+  id INTEGER PRIMARY KEY AUTOINCREMENT,
+  duet1_id INTEGER,
+  duet2_id INTEGER);
 
+INSERT INTO duets (duet1_id, duet2_id)
+VALUES(1,2);
+INSERT INTO duets (duet1_id, duet2_id)
+VALUES(1,3); 
+INSERT INTO duets (duet1_id, duet2_id)
+VALUES(3,5); 
+INSERT INTO duets (duet1_id, duet2_id)
+VALUES(1,13); 
+INSERT INTO duets (duet1_id, duet2_id)
+VALUES(14,15); 
+INSERT INTO duets (duet1_id, duet2_id)
+VALUES(14,15);
+INSERT INTO duets (duet1_id, duet2_id)
+VALUES(12,16);

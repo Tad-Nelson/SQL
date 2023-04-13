@@ -1,5 +1,4 @@
-/*We've created a database of songs and artists, and you'll make playlists 
-from them in this challenge. */
+/*From Kahn Academy */
 
 CREATE TABLE artists (
     id INTEGER PRIMARY KEY AUTOINCREMENT,

@@ -1,4 +1,4 @@
-/*From Kahn Academy */
+/* From Kahn Academy, with more artist & songs. Also artist that should do a duet with */
 
 CREATE TABLE artists (
     id INTEGER PRIMARY KEY AUTOINCREMENT,
@@ -29,8 +29,16 @@ INSERT INTO artists (name, country, genre)
 INSERT INTO artists (name, country, genre)
     VALUES ("Gloria Estefan", "US", "Pop");
 INSERT INTO artists (name, country, genre)
-    VALUES ("Bob Marley", "Jamaica", "Reggae");
-
+    VALUES ("Bob Marley", "Jamaica", "Reggae") 
+INSERT INTO artists (name, country, genre)
+    VALUES ("Fletcher", "US", "Pop") 
+INSERT INTO artists (name, country, genre)
+    VALUES ("Mac Miller", "US", "Hip-Hop") 
+INSERT INTO artists (name, country, genre)
+    VALUES ("Miley Cyrus", "US", "Pop") 
+INSERT INTO artists (name, country, genre)
+    VALUES ("Briston Maroney", "US", "Indie");
+    
 CREATE TABLE songs (
     id INTEGER PRIMARY KEY AUTOINCREMENT,
     artist TEXT,
@@ -57,4 +65,18 @@ INSERT INTO songs (artist, title)
 INSERT INTO songs (artist, title)
     VALUES ("Queen", "Bohemian Rhapsody");
 INSERT INTO songs (artist, title)
-    VALUES ("Guns N' Roses", "Don't cry");
+    VALUES ("Guns N' Roses", "Don't cry")
+INSERT INTO songs (artist, title)
+    VALUES ("Briston Maroney", "Freakin Out On The Interstate")
+INSERT INTO songs (artist, title)
+    VALUES ("Miley Cyrus", "Plastic Hearts") 
+INSERT INTO songs (artist, title)
+    VALUES ("Mac Miller", "Good News")
+INSERT INTO songs (artist, title)
+    VALUES ("Fletcher", "Bitter"); 
+
+CREATE TABLE duets ( 
+id INTEGER PRIMARY KEY AUTOINCREMENT
+duet1 _id
+duet2_id);
+

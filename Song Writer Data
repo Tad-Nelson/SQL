@@ -94,3 +94,13 @@ INSERT INTO duets (duet1_id, duet2_id)
 VALUES(14,15);
 INSERT INTO duets (duet1_id, duet2_id)
 VALUES(12,16);
+INSERT INTO duets (duet1_id, duet2_id)
+VALUES(12,14);
+
+--What artist should do a duet/create song together? 
+
+SELECT a.name, b.name FROM duets
+JOIN artists a
+ON duets.duet1_id = a.id
+JOIN artists b
+ON duets.duet2_id = b.id;

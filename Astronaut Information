@@ -7,12 +7,14 @@ FROM astronauts;
 #2. How many astronauts have the average space walk hours?
 SELECT COUNT(*) AS 'Space_walks_above_avg' 
 FROM astronauts 
-WHERE Space_Walks_hr > 8;  
+WHERE Space_Walks_hr > (SELECT AVG(Space_Walks_hr) FROM astronauts);   
+ 
 
 #3. What are the names and space walk hours for astronauts who did above average space walk hours? 
 SELECT name, AVG(Space_Walks_hr) AS 'Space_walks_above_avg' 
 FROM astronauts 
-GROUP BY name HAVING Space_walks_above_avg > 8 ORDER BY Space_walks_above_avg DESC;
+GROUP BY name HAVING Space_walks_above_avg > (SELECT AVG(Space_Walks_hr) FROM astronauts)
+ORDER BY Space_walks_above_avg DESC;
 
 #4. What are the names of the female astronauts that have completed more than the average space walk hours (8 hours)? 
 SELECT name, Space_Walks_hr

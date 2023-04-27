@@ -1,3 +1,5 @@
+# In this SQL, I am querying about a business's sales and certain locations of stores to answer questions about which products are the most profitable. 
+
 SELECT *
   FROM BIT_DB.JanSales
  LIMIT 20;

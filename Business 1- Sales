@@ -53,3 +53,9 @@ SELECT sum(quantity), product, sum(quantity)*price AS revenue
 FROM BIT_DB.FebSales
 WHERE location = '548 Lincoln St, Seattle, WA 98101' 
 GROUP BY product;
+
+--What are all products sold in Los Angeles in Feburary and what is the quantity of each product sold? 
+SELECT Product, sum(quantity) 
+FROM BIT_DB.FebSales 
+WHERE location like '%Los Angeles%' 
+GROUP BY Product;

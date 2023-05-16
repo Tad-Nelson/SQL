@@ -1,0 +1,36 @@
+SELECT * FROM Spotifydata; 
+
+--What is the average danceability by artist  
+SELECT artist_name, ROUND(avg(danceability)* 100, 2) AS Danceability_Percent
+FROM BIT_DB.Spotifydata 
+GROUP BY artist_name 
+ORDER BY Danceability_Percent desc; 
+--Who are the top 10 artists based on popularity?  
+SELECT artist_name, avg(popularity) AS popularity
+FROM BIT_DB.Spotifydata 
+GROUP BY artist_name
+ORDER BY popularity desc
+LIMIT 10;
+
+--What artist released the longest song?   
+SELECT artist_name, track_name, duration_ms/1000 AS duration_sec
+FROM BIT_DB.Spotifydata
+ORDER BY duration_sec desc 
+LIMIT 1;
+--What's the average danceability for the 10 most popular songs?  
+SELECT avg(danceability)*100 AS average_danceability
+FROM 
+(SELECT danceability
+FROM SpotifyData
+ORDER BY popularity Desc
+LIMIT 10);
+--What is the average tempo for the top 10 danceable songs? 
+ SELECT avg(tempo)
+ FROM 
+     (SELECT tempo
+     FROM SpotifyData
+     ORDER BY danceability DESC
+     LIMIT 10);
+--Is there a correlation between tempo and popularity? 
+
+-- Is there a correlation between the length of a song and its popularity, and if so, what is the strength and direction of this correlation?

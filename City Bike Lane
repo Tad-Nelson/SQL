@@ -1,0 +1,15 @@
+In this query, I am looking at city bike lane data to help answer questions for the city. 
+
+-- Boss wants a list of all the bike lanes that have an average safety rating of 4.0 or higher. She also wants to see the average safety rating for each of those bike lanes, and a label that says "Safe Lane". 
+    -- To make things clearer, could change 'average safety' to rating.
+
+WITH safety_avg_CTE AS 
+( SELECT street, avg(safetyrating) AS average_safety
+FROM CityBikeLanes 
+GROUP BY street
+)
+
+SELECT average_safety, street,'Safe Lane' AS tag
+FROM safety_avg_CTE 
+WHERE average_safety >=4.0 
+ORDER BY average_safety desc;

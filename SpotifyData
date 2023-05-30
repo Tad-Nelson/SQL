@@ -40,7 +40,19 @@ LIMIT 10);
      (SELECT tempo
      FROM SpotifyData
      ORDER BY danceability DESC
-     LIMIT 10);
+     LIMIT 10); 
+     
+ -- Using a temporary table, What is average popularity for each artist, then create a tag labled 'Top Star' for whose average popularity was about 90.
+ 
+WITH popularity_avg_CTE AS 
+(SELECT s.artist_name, avg(s.popularity) AS average_popularity
+FROM Spotifydata AS s
+GROUP BY s.artist_name
+)
+SELECT artist_name, average_popularity, 'Top Star' AS tag
+FROM popularity_avg_CTE 
+WHERE average_popularity >=90 
+ORDER BY average_popularity desc; 
      
 --Is there a correlation between tempo and popularity? 
 

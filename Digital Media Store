@@ -1,0 +1,15 @@
+--Show Customers who are not in the US. 
+SELECT CustomerId, FirstName, LastName, Country 
+FROM customers
+WHERE Country <> 'USA'; 
+
+-- What country has the most customers? 
+SELECT Country, COUNT(Country) AS Customer_Quantity 
+FROM customers
+GROUP BY Country  
+ORDER BY Customer_Quantity desc; 
+
+--Find the Invoices of customers who are from Brazil. The resulting table should show the customer's full name, Invoice ID, Date of the invoice, and billing country.
+
+
+

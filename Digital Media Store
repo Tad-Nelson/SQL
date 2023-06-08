@@ -32,9 +32,6 @@ FROM (SELECT DISTINCT iv.BillingAddress, iv.BillingCity, iv.BillingCountry, iv.B
 JOIN customers c ON iv.CustomerId = c.CustomerId;  
 
 --6. Provide a query that shows the invoices associated with each sales agent. The resulting table should include the Sales Agent's full name.     
-    --EmployeeID=SalesRepId  
-    --invoice_items & invoices = invoiceId 
-    --tracks & invoice_item = trackId
 SELECT e.FirstName,e.LastName, iv.InvoiceId
 FROM invoices iv
 JOIN customers c ON iv.CustomerId = c.CustomerId
@@ -64,4 +61,19 @@ JOIN albums alb ON t.AlbumId = alb.AlbumId
 JOIN artists art ON alb.ArtistId = art.ArtistId 
 ORDER BY artist_name;
 
+--11. What was the highest grossing track 
+SELECT sum(iv_items.Quantity)* iv_items.UnitPrice gross ,t.Name
+FROM invoice_items iv_items 
+JOIN tracks t ON iv_items.TrackId = t.TrackId 
+GROUP BY iv_items.TrackId 
+ORDER BY gross desc;  
+
+--12. Which sales agent made the most dollars in sales in 2009?
+SELECT emp.FirstName, emp.LastName, ROUND(sum(iv.Total)) sales_total
+FROM employees emp 
+JOIN customers cust ON emp.EmployeeId = cust.SupportRepId 
+JOIN invoices iv ON cust.CustomerId = iv.CustomerId 
+WHERE iv.InvoiceDate BETWEEN '2009-01-01' AND '2009-12-31'
+GROUP BY emp.FirstName
+ORDER BY sales_total desc limit 1;
 

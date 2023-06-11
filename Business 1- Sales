@@ -36,7 +36,7 @@ SELECT product, price
 FROM BIT_DB.JanSales JAN
 WHERE price IN (SELECT min(price) FROM BIT_DB.JanSales JAN )limit 1; 
 
--- What is the total revenue for each prodduct in the month of January?  
+-- What is the total revenue for each product in the month of January?  
 -- 1st query is to check to make sure that all the quantity is added up then 2nd query is the answer to the question
 SELECT SUM(quantity), price, product
 FROM BIT_DB.JanSales

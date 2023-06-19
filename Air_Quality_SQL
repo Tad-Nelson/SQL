@@ -1,0 +1,30 @@
+-- This query is to look at what cities from around the world have the best and worst Airquality and the factors that affect them. 
+
+SELECT *
+FROM AirQuality; 
+
+--What is the average AQI_value for each city? 
+SELECT City, Country,avg(AQI_Value)as AQI
+FROM AirQuality 
+GROUP BY City
+ORDER BY AQI DESC;
+
+-- How many cities have Very Unhealthy AQI_Category? 
+SELECT COUNT(DISTINCT City) AS City_count
+FROM AirQuality
+WHERE AQI_Category = "Very Unhealthy";
+
+-- Which Country has the cleanest AQI?
+    --What makes these countries set apart?
+  
+SELECT City, Country,avg(AQI_Value)as AQI
+FROM AirQuality 
+GROUP BY City
+ORDER BY AQI ASC;
+
+--What countries highest ozone AQI?
+    -- How does ozone levels effect air quality? 
+SELECT City, Ozone_AQI_Value, Ozone_AQI_Category 
+FROM AirQuality
+GROUP BY City
+ORDER BY Ozone_AQI_Value DESC;
